@@ -1,0 +1,25 @@
+<h1>Simpsons Characters</h1>
+<table>
+    <thead>
+        <tr>
+            <td class="col-md 2">First Name</td>
+            <td class="col-md 2">Last Name</td>
+            <td class="col-md 2">Workplace</td>
+            <td class="col-md 2">Created</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @characters.each do |character| %>
+        <tr>
+            <td><%= character.first_name %></td>
+            <td><%= character.last_name %></td>
+            <td><%= character.work_place %></td>
+            <td><%= character.created_at %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+<form class="" action="/characters" method="post">
+    <input name="autheticity_token" value="<%= form_authenticity_token %>" type= "hidden">
+    <a href="#">New Character</a>
+</form>
